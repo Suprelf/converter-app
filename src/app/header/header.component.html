@@ -1,0 +1,24 @@
+<header class="header">
+    <div class="header-block">
+        <mat-form-field appearance="fill" class="header-field">
+            <mat-label>Select currency</mat-label>
+            <span matPrefix>1 &nbsp;</span>
+            <mat-select [(value)]="selected">
+                <mat-option value="UAH">UAH</mat-option>
+                <mat-option value="USD">USD</mat-option>
+                <mat-option value="EUR">EUR</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="header-eq">=</div>
+
+    <div class="header-block">
+        <mat-form-field class="header-field" id="header-block-left">
+            <span matPrefix id="prefix">{{displayedCurrency(selected) | currency:'':''}} &nbsp;</span>
+            <input matInput value="UAH" disabled="true"> 
+        </mat-form-field>
+    </div>
+
+
+</header>

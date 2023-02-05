@@ -1,0 +1,7 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 8px;
+}/*# sourceMappingURL=header.component.css.map */

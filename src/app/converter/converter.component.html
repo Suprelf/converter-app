@@ -1,0 +1,52 @@
+<div class="container">
+    <form class="exchange-container">
+
+        <div class="exchange-block">
+
+            <mat-form-field class="exchange-field" id="exchange-block-input">
+                <mat-label>Amount</mat-label>
+                <input matInput [(ngModel)]="amount_left" [ngModelOptions]="{standalone: true}" type="number"
+                       (keyup)="calculate_l(amount_left, currency_left)">             
+
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="exchange-field">
+                <mat-label>Select currency</mat-label>
+                <mat-select [(ngModel)]="currency_left" [ngModelOptions]="{standalone: true}"
+                            (selectionChange)="calculate_l(amount_left, currency_left)">
+                    <mat-option value="UAH">UAH</mat-option>
+                    <mat-option value="USD">USD</mat-option>
+                    <mat-option value="EUR">EUR</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+
+        <button mat-raised-button (click)="switchCurrency(); calculate_l(amount_left, currency_left)"  
+            type="button" class="exchange-button"> 
+            <svg height="48" width="48">
+                <path
+                    d="m15.8 39.85-2.05-2.1 6.1-6H4V28.8h15.85l-6.1-6.05 2.05-2.05 9.6 9.55Zm16.4-12.6-9.6-9.6 9.6-9.55 2.05 2-6.05 6.1H44v2.95H28.2l6.05 6Z" />
+            </svg>
+        </button>
+
+        <div class="exchange-block">
+            <mat-form-field class="exchange-field">
+                <mat-label>Amount</mat-label>
+                <input matInput [(ngModel)]="amount_right" [ngModelOptions]="{standalone: true}" type="number"
+                       (keyup)="calculate_r(amount_right, currency_right)">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="exchange-field">
+                <mat-label>Select currency</mat-label>
+                <mat-select [(ngModel)]="currency_right" [ngModelOptions]="{standalone: true}"
+                            (selectionChange)="calculate_r(amount_right, currency_right)">
+                    <mat-option value="UAH">UAH</mat-option>
+                    <mat-option value="USD">USD</mat-option>
+                    <mat-option value="EUR">EUR</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+
+    </form>
+</div>
